@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import HeaderBack from "../components/HeaderBack";
+import 'bootstrap/dist/css/bootstrap.css';
+import Carousel  from 'react-bootstrap/Carousel';
+import React from 'react';
 
 export default function DetalhesHospedagem() {
     return (
@@ -8,7 +11,26 @@ export default function DetalhesHospedagem() {
             <MainContainer>
                 <PrincipalContainer>
                     <TituloContainer><span>Nome do Hotel</span></TituloContainer>
-                    <CarrosselContainer></CarrosselContainer>
+                    <CarrosselContainer>
+                        <Carousel fade>
+                            <Carousel.Item interval={1500}>
+                                <img
+                                    className="d-block w-100"
+                                    src=""
+                                    alt="Image One"
+                                />
+                                
+                            </Carousel.Item>
+                            <Carousel.Item interval={1500}>
+                                <img
+                                    className="d-block w-100"
+                                    src=""
+                                    alt="Image Two"
+                                />
+                                
+                            </Carousel.Item>
+                        </Carousel>
+                    </CarrosselContainer>
                     <DetalheContainer>
                         <QuadradosContainer>
                             <p>Características:</p>
@@ -19,7 +41,7 @@ export default function DetalhesHospedagem() {
                             </ul>
                         </QuadradosContainer>
                         <QuadradosContainer>
-                        <p>Comodidades:</p>
+                            <p>Comodidades:</p>
                             <ul>
                                 <li>Piscina</li>
                                 <li>Sauna</li>
@@ -43,7 +65,6 @@ const CarrosselContainer = styled.div`
     margin-top: 100px;
     width: 100%;
     height: 600px;
-    background-color: gray;
 `
 const DetalheContainer = styled.div`
     margin-top: 250px;

@@ -10,11 +10,11 @@ function App() {
     <>
     <BrowserRouter>
           <Routes>
-            <Route path="/home" element={<StartPage />} />
+            <Route path="/" element={<StartPage />} />
             <Route path="/home" element={<HomePage />} />
             <Route path="/home" element={<DetalhesPassagem />} />
             <Route path="/home" element={<Hospedagens />} />
-            <Route path="/" element={<DetalhesHospedagem />} />
+            <Route path="/home" element={<DetalhesHospedagem />} />
           </Routes>
       </BrowserRouter>
     </>

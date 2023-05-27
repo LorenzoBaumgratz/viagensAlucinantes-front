@@ -1,7 +1,19 @@
 import styled from "styled-components";
 import Header from "../components/Header";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function StartPage() {
+
+    useEffect(()=>{
+        console.log("oi",process.env.REACT_APP_API_URL)
+        axios.get(`${process.env.REACT_APP_API_URL}/cities`)
+        .then(res=>{console.log(res)})
+        .catch(err => {
+            console.log(err.response.data)
+          })
+    },[])
+
     return (
         <>
             <Header />
