@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import Header from "../components/Header"
 
-export default function HomePage() {
+export default function Hospedagens() {
     return (
         <>
             <Header />
@@ -9,10 +9,9 @@ export default function HomePage() {
                 <LateralContainer>
                     <Min type="range" placeholder="name .."/> 
                     <Max type="range" placeholder="name .."/> 
-
                 </LateralContainer>
                 <PrincipalContainer>
-                    <TituloContainer><span>Passagens para Floripa</span></TituloContainer>
+                    <TituloContainer><span>Hospedagens em Floripa</span></TituloContainer>
                 </PrincipalContainer>
             </MainContainer>
         </>

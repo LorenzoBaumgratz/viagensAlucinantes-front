@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 400;
         box-sizing: border-box;
     }
+    body{
+        background-color: #2596be;
+    }
     button {
         outline: none;
         border: none;
