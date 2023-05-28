@@ -1,16 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
 
-export default function Passagem(props){
+export default function Hospedagem(props){
     const navigate = useNavigate();
-
+    console.log("hospId",props.id)
     return(
-        <Div onClick={()=>navigate(`/passagens/${props.id}`)}>
-            <img src={props.img} alt="img"/>
-            <p>{props.date} - {props.departureTime}</p>
-            <p>R${(props.ticketPrice/100).toFixed(2)}</p>
-            <p>De: {props.city}</p>
-
+        <Div onClick={()=>navigate(`/hospedagens/${props.id}`)}>
+            <img src={props.mainUrl} alt="img"/>
+            <p>{props.hotelName}</p>
+            <p>R${(props.hotelPrice/100).toFixed(2)}</p>
         </Div>
     )
 }
@@ -24,16 +22,16 @@ const Div=styled.div`
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border-radius:15px;
+    border-radius: 15px;
     p{
         font-size: 40px;
         margin-top: 30px;
         margin-bottom: 10px;
     }
     img{
-        width: 100%;
-        height: 80%;
         border-top-left-radius:15px;
         border-top-right-radius:15px;
+        width: 100%;
+        height: 80%;
     }
 `

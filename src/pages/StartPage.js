@@ -66,12 +66,14 @@ const Instrucoes = styled.div`
     justify-content: center;
     width: 600px;
     height: 600px;
-    background-color: gray;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 20px;
     div{
         cursor: pointer;
         span{
             font-size: 46px;
-            color: #1cf63e;
+            color: white;
+            font-weight: 600;
         }
     }
     p{

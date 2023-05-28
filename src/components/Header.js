@@ -12,7 +12,7 @@ export default function Header(){
 }
 
 const HeaderContainer=styled.div`
-    background-color: yellow;
+    background-color: #ededed;
     height: 100px;
     width: 100%;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2);

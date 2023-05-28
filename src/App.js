@@ -16,7 +16,7 @@ function App() {
             <Route path="/passagens" element={<HomePage />} />
             <Route path="/passagens/:idTicket" element={<DetalhesPassagem />} />
             <Route path="/hospedagens" element={<Hospedagens />} />
-            <Route path="/home" element={<DetalhesHospedagem />} />
+            <Route path="/hospedagens/:idHospedagem" element={<DetalhesHospedagem />} />
           </Routes>
         </ContextProvider>
       </BrowserRouter>

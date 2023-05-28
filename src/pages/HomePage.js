@@ -6,35 +6,37 @@ import axios from "axios"
 import Passagem from "../components/Passagem"
 
 export default function HomePage() {
-    const {city,setCity}=useContexto()
-    const [passagem,setPassagem]=useState([])
-    
-    useEffect(()=>{
-        axios.post(`${process.env.REACT_APP_API}/tickets/main/${city[0]}`,{
-            "min": 100000,
-            "max": 500000
-          })
-        .then(res=>{
-            setPassagem(res.data)
+    const { city, setCity } = useContexto()
+    const [passagem, setPassagem] = useState([])
+    const [min,setMin]=useState(0)
+    const [max,setMax]=useState(50000)
+    useEffect(() => {
+        axios.post(`${process.env.REACT_APP_API}/tickets/main/${city[0]}`, {
+            "min": min*100,
+            "max": max*100
         })
-        .catch(err => {
-            console.log(err.response.data)
-        })
-    },[])
-    console.log("img",city)
+            .then(res => {
+                setPassagem(res.data)
+            })
+            .catch(err => {
+                console.log(err.response.data)
+            })
+    }, [min,max])
+    console.log("img", city)
     return (
         <>
             <Header />
             <MainContainer>
                 <LateralContainer>
-                    <Min type="range" placeholder="name .."/> 
-                    <Max type="range" placeholder="name .."/> 
-
+                    <span>Min: R$ {min}</span>
+                    <Min type="range" value={min} min={0} max={50000} onChange={e => setMin(e.target.value)} />
+                    <span>Max: R$ {max}</span>
+                    <Max type="range" value={max} min={0} max={50000} onChange={e => setMax(e.target.value)} />
                 </LateralContainer>
                 <PrincipalContainer>
                     <TituloContainer><span>Passagens para {city.split(",")[2]}</span></TituloContainer>
                     <PassagensContainer>
-                        {passagem.map(p=><Passagem id={p.id} departureTime={p.departureTime} ticketPrice={p.ticketPrice} date={p.date} city={p.city} img={city.split(",")[1]}/>)}
+                        {passagem.map(p => <Passagem id={p.id} departureTime={p.departureTime} ticketPrice={p.ticketPrice} date={p.date} city={p.city} img={city.split(",")[1]} />)}
                     </PassagensContainer>
                 </PrincipalContainer>
             </MainContainer>
@@ -62,7 +64,13 @@ const LateralContainer = styled.div`
     align-items: center;
     width: 15%;
     height: 94.9vh;
-    background-color: #3e67cf;
+    background-color: rgba(0,0,0,0.1);
+    span{
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
 `
 const PrincipalContainer = styled.div`
     width: 100%;
@@ -71,7 +79,7 @@ const PrincipalContainer = styled.div`
     flex-direction: column;
     align-items: center; 
 `
-const TituloContainer= styled.div`
+const TituloContainer = styled.div`
     margin-top: 50px;
     span{
     font-weight: 700;
@@ -79,9 +87,13 @@ const TituloContainer= styled.div`
     }
 `
 const Min=styled.input`
-    height: 36px;
+    height: 15px;
     width: 70%;
     margin-bottom: 100px;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    outline: none;
+    background: #FFFFFF;
     cursor: pointer;
 
   &:focus {
@@ -90,8 +102,13 @@ const Min=styled.input`
 `
 
 const Max=styled.input`
-    height: 36px;
+    height: 15px;
     width: 70%;
+    margin-bottom: 100px;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    outline: none;
+    background: #FFFFFF;
     cursor: pointer;
 
   &:focus {
