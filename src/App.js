@@ -4,19 +4,23 @@ import StartPage from "./pages/StartPage";
 import DetalhesPassagem from "./pages/DetalhesPassagem";
 import Hospedagens from "./pages/Hospedagens";
 import DetalhesHospedagem from "./pages/DetalhesHospedagem";
+import { ContextProvider } from "./contexts/context";
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+      <BrowserRouter>
+        <ContextProvider>
           <Routes>
             <Route path="/" element={<StartPage />} />
-            <Route path="/home" element={<HomePage />} />
-            <Route path="/home" element={<DetalhesPassagem />} />
-            <Route path="/home" element={<Hospedagens />} />
+            <Route path="/passagens" element={<HomePage />} />
+            <Route path="/passagens/:idTicket" element={<DetalhesPassagem />} />
+            <Route path="/hospedagens" element={<Hospedagens />} />
             <Route path="/home" element={<DetalhesHospedagem />} />
           </Routes>
+        </ContextProvider>
       </BrowserRouter>
+
     </>
   );
 }
