@@ -1,9 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
 
 export default function Header(){
+    const navigate = useNavigate();
+
     return(
-        <HeaderContainer>
-            Viagens Alucinantes
+        <HeaderContainer onClick={()=>navigate("/")}>
+            <p>Viagens Alucinantes</p>
         </HeaderContainer>
     )
 }
@@ -22,4 +25,9 @@ const HeaderContainer=styled.div`
     top: 0;
     right: 0;
     z-index: 1;
+    p{
+        font-size: 40px;
+        font-weight: 700;
+        cursor: pointer;
+    }
 `

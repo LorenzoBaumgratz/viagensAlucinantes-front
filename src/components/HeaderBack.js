@@ -1,10 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components"
 
 export default function HeaderBack(){
+    const navigate = useNavigate();
+
     return(
         <HeaderContainer>
-            <p>Viagens Alucinantes</p>
-            <p>Voltar</p>           
+            <p onClick={()=>navigate("/")}>Viagens Alucinantes</p>
+            <p onClick={()=>navigate(-1)}>Voltar</p>           
         </HeaderContainer>
     )
 }
@@ -25,5 +28,6 @@ const HeaderContainer=styled.div`
     p{
         font-size: 40px;
         font-weight: 700;
+        cursor: pointer;
     }
 `

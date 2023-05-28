@@ -1,20 +1,36 @@
 import styled from "styled-components";
 import HeaderBack from "../components/HeaderBack";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function DetalhesPassagem() {
+    const {idTicket}=useParams()
+    const [ticket,setTicket]=useState({})
+    useEffect(()=>{
+        axios.get(`${process.env.REACT_APP_API}/tickets/${idTicket}`)
+        .then(res=>{
+            setTicket(res.data[0])
+            console.log(res.data[0])
+        })
+        .catch(err => {
+            console.log(err.response.data)
+        })
+    },[])
+
     return (
         <>
             <HeaderBack />
             <MainContainer>
                 <PrincipalContainer>
-                    <TituloContainer><span>Passagem para Floripa</span></TituloContainer>
+                    <TituloContainer><span>Passagem para {ticket.toCity}</span></TituloContainer>
                     <DetalheContainer>
-                        <p>Cidade de Destino:</p>
-                        <p>Cidade de Origem:</p>
-                        <p>Companhia aérea:</p>
-                        <p>Horario de partida:</p>
-                        <p>Horario previsto de chegada:</p>
-                        <p>Preço da passagem:</p>
+                        <p>Cidade de Destino: {ticket.toCity}</p>
+                        <p>Cidade de Origem: {ticket.fromCity}</p>
+                        <p>Companhia aérea: {ticket.airlineName}</p>
+                        <p>Horario de partida:  {ticket.departureTime}</p>
+                        <p>Horario previsto de chegada: {ticket.arrivalTime}</p>
+                        <p>Preço da passagem: R$ {(ticket.ticketPrice/100).toFixed(2)}</p>
                     </DetalheContainer>
                 </PrincipalContainer>
             </MainContainer>

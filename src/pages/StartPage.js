@@ -18,14 +18,13 @@ export default function StartPage() {
                 console.log(err.response.data)
             })
     }, [])
-    console.log("city",city[0])
     return (
         <>
             <Header />
             <MainContainer>
                 <CitySelect onChange={(e)=>setCity(e.target.value)}>
                     <option value="" hidden>Selecione a cidade de destino</option>
-                    {cities.map(c => <option key={c.id} value={[c.id,c.cityImgUrl]}>{c.city}</option>)}
+                    {cities.map(c => <option key={c.id} value={[c.id,c.cityImgUrl,c.city]}>{c.city}</option>)}
                 </CitySelect>
                 <InstrucoesContainer>
                     <Instrucoes>

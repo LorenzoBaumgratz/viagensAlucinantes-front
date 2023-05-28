@@ -3,6 +3,7 @@ import styled from "styled-components"
 
 export default function Passagem(props){
     const navigate = useNavigate();
+
     return(
         <Div onClick={()=>navigate(`/passagens/${props.id}`)}>
             <img src={props.img} alt="img"/>

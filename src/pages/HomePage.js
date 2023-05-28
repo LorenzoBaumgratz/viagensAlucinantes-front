@@ -21,7 +21,7 @@ export default function HomePage() {
             console.log(err.response.data)
         })
     },[])
-    console.log("img",city.split(",")[1])
+    console.log("img",city)
     return (
         <>
             <Header />
@@ -32,7 +32,7 @@ export default function HomePage() {
 
                 </LateralContainer>
                 <PrincipalContainer>
-                    <TituloContainer><span>Passagens para Floripa</span></TituloContainer>
+                    <TituloContainer><span>Passagens para {city.split(",")[2]}</span></TituloContainer>
                     <PassagensContainer>
                         {passagem.map(p=><Passagem id={p.id} departureTime={p.departureTime} ticketPrice={p.ticketPrice} date={p.date} city={p.city} img={city.split(",")[1]}/>)}
                     </PassagensContainer>
