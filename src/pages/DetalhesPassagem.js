@@ -42,38 +42,39 @@ export default function DetalhesPassagem() {
 }
 
 const TituloContainer = styled.div`
-    margin-top: 100px;
+    margin-top: 50px;
     span{
     font-weight: 700;
-    font-size: 60px;
+    font-size: 40px;
     }
 `
 const ConteudoContainer = styled.div`
     display: flex;
-    width: 1900px;
+    width: 900px;
     justify-content: center;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
 
     img{
-        margin-top: 100px;
-        width: 600px;
-        height: 600px;
+        margin-top: 50px;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
     }
 `
 const DetalheContainer = styled.div`
-    margin-top: 100px;
-    width: 1000px;
+    margin-top: 50px;
+    height: 270px;
+    width: 500px;
     display: flex;
     flex-direction: column;
-    padding-left: 200px;
+    padding-left: 100px;
     background-color: #ededed;
     border-radius: 30px;
     padding-bottom: 50px;
     p{
-    font-size: 40px;
-    margin-top: 50px;
+    font-size: 20px;
+    margin-top: 20px;
     }
 `
 const MainContainer = styled.div`

@@ -5,11 +5,10 @@ import DetalhesPassagem from "./pages/DetalhesPassagem";
 import Hospedagens from "./pages/Hospedagens";
 import DetalhesHospedagem from "./pages/DetalhesHospedagem";
 import { ContextProvider } from "./contexts/context";
-import styled from "styled-components";
 
 function App() {
   return (
-    <PagesContainer>
+    <>
       <BrowserRouter>
         <ContextProvider>
           <Routes>
@@ -21,13 +20,10 @@ function App() {
           </Routes>
         </ContextProvider>
       </BrowserRouter>
-    </PagesContainer>
+    </>
   );
 }
 
 export default App;
 
-const PagesContainer = styled.main`
-  width: calc(100vw - 50px);
-  max-height: 100vh;
-`
+

@@ -16,8 +16,8 @@ export default function Passagem(props){
 }
 
 const Div=styled.div`
-    width: 500px;
-    height: 600px;
+    width: 200px;
+    height: 250px;
     background-color: #efefef;
     display: flex;
     flex-direction: column;
@@ -26,13 +26,13 @@ const Div=styled.div`
     cursor: pointer;
     border-radius:15px;
     p{
-        font-size: 40px;
-        margin-top: 30px;
+        font-size: 20px;
+        margin-top: 10px;
         margin-bottom: 10px;
     }
     img{
         width: 100%;
-        height: 80%;
+        height: 70%;
         border-top-left-radius:15px;
         border-top-right-radius:15px;
     }

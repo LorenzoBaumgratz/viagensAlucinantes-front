@@ -67,55 +67,55 @@ export default function DetalhesHospedagem() {
 }
 
 const TituloContainer = styled.div`
-    margin-top: 100px;
+    margin-top: 50px;
     span{
     font-weight: 700;
-    font-size: 60px;
+    font-size: 40px;
     }
 `
 const CarrosselContainer = styled.div`
-    margin-top: 100px;
-    width: 2200px;
-    height: 900px;
+    margin-top: 20px;
+    width: 80%;
+    height: 500px;
     img{
-        height: 900px;
+        height: 500px;
     }
 `
 const DetalheContainer = styled.div`
-    margin-top: 150px;
+    margin-top: 50px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 200px;
+    gap: 50px;
     p{
-    font-size: 40px;
+    font-size: 20px;
     }
 `
 
 const QuadradosContainer = styled.div`
     border-radius: 50px;
     background-color: rgba(5,38,124,0.2);
-    width: 1000px;
-    height: 500px;
+    width: 400px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 50px;
+    padding: 20px;
     p{
-        font-size: 50px;
+        font-size: 20px;
         font-weight: 700;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
     li{
-        margin-top: 30px;
+        margin-top: 10px;
 
-        margin-left: 30px;
-        font-size: 40px;
+        margin-left: 20px;
+        font-size: 20px;
     }
 `
 const MainContainer = styled.div`
-    margin-top:100px;
+    margin-top:50px;
 `
 
 const PrincipalContainer = styled.div`

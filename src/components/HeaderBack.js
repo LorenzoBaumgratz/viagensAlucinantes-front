@@ -14,7 +14,7 @@ export default function HeaderBack(){
 
 const HeaderContainer=styled.div`
     background-color: #ededed;
-    height: 100px;
+    height: 50px;
     width: 100%;
     box-shadow: 0 4px 4px rgba(0,0,0,0.2);
     display: flex;
@@ -26,7 +26,7 @@ const HeaderContainer=styled.div`
     right: 0;
     z-index: 1;
     p{
-        font-size: 40px;
+        font-size: 30px;
         font-weight: 700;
         cursor: pointer;
     }

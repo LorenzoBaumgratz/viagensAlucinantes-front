@@ -45,49 +45,51 @@ export default function StartPage() {
 }
 
 const MainContainer = styled.div`
-    margin-top:500px;
+    margin-top:150px;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 
 const InstrucoesContainer = styled.div`
-    margin-top: 500px;
+    margin-top: 150px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 200px;
+    gap: 50px;
 `
 const Instrucoes = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
     justify-content: center;
-    width: 600px;
-    height: 600px;
+    gap: 100px;
+    width: 350px;
+    height: 300px;
     background-color: rgba(0,0,0,0.2);
     border-radius: 20px;
+    padding: 15px;
     div{
         cursor: pointer;
         span{
-            font-size: 46px;
+            margin-top: 100px;
+            font-size: 26px;
             color: white;
             font-weight: 600;
         }
     }
     p{
-        height: 300px;
-        font-size: 46px;
+        height: 30px;
+        font-size: 26px;
     }
 `
 const CitySelect = styled.select`
   width: 60%;
-  height:100px;
+  height:50px;
   background: white;
   color: gray;
   padding-left: 5px;
-  font-size: 32px;
+  font-size: 22px;
   border:none;
   margin-left: 10px;
   outline: none;
@@ -98,7 +100,7 @@ const CitySelect = styled.select`
          font-weight: small;
          display: flex;
          white-space: pre;
-         min-height: 20px;
+         min-height: 10px;
          padding: 0px 2px 1px;
        }
 `

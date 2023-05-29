@@ -52,11 +52,11 @@ const HospedagensContainer = styled.div`
     align-items: center;
     flex-wrap: wrap;
     gap: 125px;
-    margin-top: 150px;
+    margin-top: 100px;
     width: 80%;
 `
 const MainContainer = styled.div`
-    margin-top:100px;
+    margin-top:50px;
     display: flex;
 `
 const LateralContainer = styled.div`
@@ -68,12 +68,11 @@ const LateralContainer = styled.div`
     height: 94.9vh;
     background-color: rgba(0,0,0,0.1);
     span{
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 600;
         margin-top: 15px;
         margin-bottom: 15px;
     }
-    
 `
 const PrincipalContainer = styled.div`
     width: 100%;
@@ -90,7 +89,7 @@ gap: 50px;
     margin-top: 50px;
     span{
     font-weight: 700;
-    font-size: 60px;
+    font-size: 40px;
     }
     img{
         height: 70px;
