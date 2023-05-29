@@ -4,12 +4,13 @@ import { useContexto } from "../contexts/context"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Passagem from "../components/Passagem"
+import passagemImg from "../images/plane.png"
 
 export default function HomePage() {
     const { city} = useContexto()
     const [passagem, setPassagem] = useState([])
     const [min,setMin]=useState(0)
-    const [max,setMax]=useState(50000)
+    const [max,setMax]=useState(30000)
     useEffect(() => {
         axios.post(`${process.env.REACT_APP_API}/tickets/main/${city[0]}`, {
             "min": min*100,
@@ -28,12 +29,12 @@ export default function HomePage() {
             <MainContainer>
                 <LateralContainer>
                     <span>Min: R$ {min}</span>
-                    <Min type="range" value={min} min={0} max={50000} onChange={e => setMin(e.target.value)} />
+                    <Min type="range" value={min} min={0} max={30000} onChange={e => setMin(e.target.value)} />
                     <span>Max: R$ {max}</span>
-                    <Max type="range" value={max} min={0} max={50000} onChange={e => setMax(e.target.value)} />
+                    <Max type="range" value={max} min={0} max={30000} onChange={e => setMax(e.target.value)} />
                 </LateralContainer>
                 <PrincipalContainer>
-                    <TituloContainer><span>Passagens para {city.split(",")[2]}</span></TituloContainer>
+                    <TituloContainer><span>Passagens para {city.split(",")[2]}</span><img src={passagemImg} alt="img"/></TituloContainer>
                     <PassagensContainer>
                         {passagem.map(p => <Passagem id={p.id} departureTime={p.departureTime} ticketPrice={p.ticketPrice} date={p.date} city={p.city} img={city.split(",")[1]} />)}
                     </PassagensContainer>
@@ -49,7 +50,7 @@ const MainContainer = styled.div`
 `
 const PassagensContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 125px;
@@ -79,10 +80,19 @@ const PrincipalContainer = styled.div`
     align-items: center; 
 `
 const TituloContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 50px;
     margin-top: 50px;
     span{
     font-weight: 700;
     font-size: 60px;
+    }
+    img{
+        height: 70px;
+        width: 70px;
+        padding-bottom: 10px;
     }
 `
 const Min=styled.input`

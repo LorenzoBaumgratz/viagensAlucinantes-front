@@ -4,6 +4,7 @@ import { useContexto } from "../contexts/context"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import Hospedagem from "../components/Hospedagem"
+import hospImg from "../images/travel-luggage.png"
 
 export default function Hospedagens() {
     const {city}=useContexto()
@@ -35,7 +36,7 @@ export default function Hospedagens() {
                     <Max type="range" value={max} min={0} max={50000} onChange={e=>setMax(e.target.value)}/> 
                 </LateralContainer>
                 <PrincipalContainer>
-                    <TituloContainer><span>Hospedagens em {city.split(",")[2]}</span></TituloContainer>
+                    <TituloContainer><span>Hospedagens em {city.split(",")[2]}</span> <img src={hospImg} alt="img"/></TituloContainer>
                     <HospedagensContainer>
                     {hospedagem.map(h=><Hospedagem id={h.id} hotelPrice={h.hotelPrice} hotelName={h.hotelName} mainUrl={h.mainUrl}/>)}
                     </HospedagensContainer>
@@ -47,7 +48,7 @@ export default function Hospedagens() {
 
 const HospedagensContainer = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 125px;
@@ -82,10 +83,19 @@ const PrincipalContainer = styled.div`
     align-items: center; 
 `
 const TituloContainer= styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 50px;
     margin-top: 50px;
     span{
     font-weight: 700;
     font-size: 60px;
+    }
+    img{
+        height: 70px;
+        width: 70px;
+        padding-bottom: 10px;
     }
 `
 const Min=styled.input`

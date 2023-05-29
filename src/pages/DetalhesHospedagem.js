@@ -108,6 +108,8 @@ const QuadradosContainer = styled.div`
         margin-bottom: 50px;
     }
     li{
+        margin-top: 30px;
+
         margin-left: 30px;
         font-size: 40px;
     }
