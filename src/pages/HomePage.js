@@ -6,7 +6,7 @@ import axios from "axios"
 import Passagem from "../components/Passagem"
 
 export default function HomePage() {
-    const { city, setCity } = useContexto()
+    const { city} = useContexto()
     const [passagem, setPassagem] = useState([])
     const [min,setMin]=useState(0)
     const [max,setMax]=useState(50000)
@@ -22,7 +22,6 @@ export default function HomePage() {
                 console.log(err.response.data)
             })
     }, [min,max])
-    console.log("img", city)
     return (
         <>
             <Header />

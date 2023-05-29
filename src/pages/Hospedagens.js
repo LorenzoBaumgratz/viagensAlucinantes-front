@@ -6,14 +6,12 @@ import axios from "axios"
 import Hospedagem from "../components/Hospedagem"
 
 export default function Hospedagens() {
-    const {city,setCity}=useContexto()
+    const {city}=useContexto()
     const [hospedagem,setHospedagem]=useState([])
     const [min,setMin]=useState(0)
     const [max,setMax]=useState(50000)
  
     useEffect(()=>{
-        console.log("city",city)
-        console.log("comando",`${process.env.REACT_APP_API}/accommodations/main/${city[0]}`)
         axios.post(`${process.env.REACT_APP_API}/accommodations/main/${city[0]}`,{
             "min": min*100,
             "max": max*100
@@ -26,8 +24,6 @@ export default function Hospedagens() {
             console.log(err.response.data)
         })
     },[min,max])
-    console.log("min",min)
-    console.log("max",max)
     return (
         <>
             <Header />

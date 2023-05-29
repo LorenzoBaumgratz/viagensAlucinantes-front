@@ -11,7 +11,6 @@ export default function DetalhesPassagem() {
         axios.get(`${process.env.REACT_APP_API}/tickets/${idTicket}`)
         .then(res=>{
             setTicket(res.data[0])
-            console.log(res.data[0])
         })
         .catch(err => {
             console.log(err.response.data)

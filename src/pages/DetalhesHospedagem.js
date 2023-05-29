@@ -12,7 +12,6 @@ export default function DetalhesHospedagem() {
     const [areas, setAreas] = useState([])
     const [images, setImages] = useState([])
 
-    console.log("hospId2", idHospedagem)
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/accommodations/${idHospedagem}`)
             .then(res => {
@@ -25,7 +24,6 @@ export default function DetalhesHospedagem() {
                 console.log(err.response.data)
             })
     }, [])
-    console.log("areas", areas)
     return (
         <>
             <HeaderBack />
